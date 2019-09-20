@@ -20,6 +20,7 @@
           {{#each workOrder}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="workOrder/{{this.id}}">{{this.name}}</a>
+            <a href="TimeSheet">Add Time</a>
             <button id="delete" class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}

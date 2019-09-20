@@ -21,14 +21,14 @@ module.exports = function(app) {
     });
   });
 
-  // // Load Time Sheet Model
-  // app.get("/TimeSheet", function(req, res) {
-  //   db.TimeSheet.findAll({}).then(function(dbTimeSheets) {
-  //     res.render("TimeSheet", {
-  //       TimeSheet: dbTimeSheets
-  //     });
-  //   });
-  // });
+  // Load Time Sheet Model
+  app.get("/TimeSheet", function(req, res) {
+    db.TimeSheet.findAll({}).then(function(dbTimeSheets) {
+      res.render("TimeSheet", {
+        TimeSheet: dbTimeSheets
+      });
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

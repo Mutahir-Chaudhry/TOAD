@@ -38,6 +38,10 @@ var refreshWorkOrders = function() {
         .text(workOrder.name)
         .attr("href", "/workOrder/" + workOrder.id);
 
+      var $b = $("<a>")
+        .text("Add Time Sheet")
+        .attr("href", "/workOrder/" + workOrder.id + "/timesheet");
+
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
@@ -50,6 +54,7 @@ var refreshWorkOrders = function() {
         .text("Complete");
 
       $li.append($button);
+      $li.append($b);
 
       return $li;
     });
@@ -82,6 +87,9 @@ var handleFormSubmit = function(event) {
   $workOrderDescription.val("");
 };
 
+var handleTimeSheetSubmit = function(event) {
+  event.preventDefault();
+};
 // handleDeleteBtnClick is called when an workOrder's delete button is clicked
 // Remove the workOrder from the db and refresh the list
 var handleDeleteBtnClick = function() {
